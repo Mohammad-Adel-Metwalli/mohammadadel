@@ -26,9 +26,11 @@ int main(void)
 			j = i + 1;
 			while (j < 58)
 			{
+				putchar(k);
 				putchar(i);
 				putchar(j);
-				if (!(i == 56 && j == 57))
+
+				if (!(k == 55 && i == 56 && j == 57))
 				{
 					putchar(44);
 					putchar(32);
@@ -36,9 +38,9 @@ int main(void)
 				j++;
 			}
 			i++;
+		}
+		k++;
 	}
 	putchar('\n');
 	return (0);
-
-	}
 }

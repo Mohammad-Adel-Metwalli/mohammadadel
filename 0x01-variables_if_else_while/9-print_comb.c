@@ -13,13 +13,16 @@
 int main(void)
 {
 
-	int i = 0;
-	char he[] = "0, 1, 2, 3, 4, 5, 6, 7, 8, 9";
-	int size = sizeof(he);
+	int i = 48;
 
-	while (i < (size - 1))
+	while (i < 58)
 	{
-		putchar(he[i]);
+		putchar(i);
+		if (i != 57)
+		{	
+			putchar(44);
+			putchar(32);
+		}
 		i++;
 	}
 

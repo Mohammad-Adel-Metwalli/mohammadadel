@@ -1,0 +1,21 @@
+#include "main.h"
+
+/**
+ * print_alphabet_x10.c - utilizes on the _putchar function to print
+ * the alphabet a - z
+ */
+void print_alphabet(void)
+{
+	int i, j;
+
+	char word[] = "abcdefghijklmnopqrstuvwxyz";
+
+	for (j = 0; j < 10; j++)
+	{
+		for (i = 0; i < 26 ; i++)
+		{
+			_putchar(word[i]);
+		}
+		_putchar('\n');
+	}
+}

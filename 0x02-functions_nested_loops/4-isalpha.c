@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _islower - function to check if
+ * _isalpha - function to check if
  *            character is lowercase
  *
  * @c: checks input of function
@@ -10,7 +10,7 @@
  *         otherwise always 0 (Success)
  */
 
-int _islower(int c)
+int _isalpha(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (1);

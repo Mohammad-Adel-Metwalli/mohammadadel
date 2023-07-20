@@ -2,7 +2,7 @@
 
 /**
  * print_triangle - a function that prints a triangle, followed by a new line.
- * 
+ *
  * @size: size of the triangle
  *
  * Return: 0 (Success)
@@ -15,9 +15,8 @@ void print_triangle(int size)
 	{
 		for (int j = size; j > 0; --j)
 		{
-			if (i == 0){
+			if (i == 0)
 				continue;
-			}
 			if (i >= j)
 				_putchar('#');
 			else

@@ -1,4 +1,4 @@
-i#include "holberton.h"
+#include "main.h"
 
 
 int _pow(int a, int b);

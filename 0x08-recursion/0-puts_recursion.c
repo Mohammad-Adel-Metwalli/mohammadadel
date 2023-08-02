@@ -2,7 +2,7 @@
 
 /**
  * _puts_recursion - a function that prints a string in recursive way
- * 
+ *
  * @s: pointer to character array
  *
  * Return: void
@@ -15,5 +15,5 @@ void _puts_recursion(char *s)
 		return;
 	}
 	_putchar(s[0]);
-	_puts_recursion(s+1);
+	_puts_recursion(s + 1);
 }

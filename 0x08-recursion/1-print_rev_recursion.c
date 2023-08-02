@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * _print_rev_recursion - a function that prints a rev of a string in recursive way
+ * _print_rev_recursion - a function that prints a rev of 
+ *                        a string in recursive way
  *
  * @s: pointer to character array
  *

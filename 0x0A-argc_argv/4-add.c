@@ -1,57 +1,85 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include "main.h"
 
-
-int _isdigit(int c);
-
 /**
- * main - Entry point
+ * _atoi - converts a string to an integer
+ * @s: string to be converted
  *
- * @argc: number of arguments
- * @argv: values of arguments
- *
- * Return: 0 On success
+ * Return: the int converted from the string
  */
-int main(int argc, char *argv[])
+int _atoi(char *s)
 {
-	int i, k, sum = 0;
+	int i, d, n, len, f, digit;
 
-	if (argc == 1)
-		printf("0\n");
-	else
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
+
+	while (s[len] != '\0')
+		len++;
+
+	while (i < len && f == 0)
 	{
-		for (i = 1; i < argc; i++)
+		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			k = _isdigit(argv[i][0]);
-			if (k)
-			{
-				if (k >= 0)
-					sum += atoi(argv[i]);
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
 		}
-		printf("%d\n", sum);
+		i++;
 	}
 
-	return (0);
+	if (f == 0)
+		return (0);
+
+	return (n);
 }
 
 /**
- * _isdigit - check if the input is digit or not
+ * main - adds two positive number
+ * @argc: number of arguments
+ * @argv: array of arguents
  *
- * @c: checks input of function
- *
- * Return: 1 if 'c' is digit
- * else return 0
+ * Return: 0 (Success), or 1 (Success)
  */
-int _isdigit(int c)
+int main(int argc, char *argv[])
 {
-	if (c >= '0' && c <= '9')
-		return (1);
+	int sum, num, i, j, k;
+
+	sum = 0;
+
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > '9' || argv[i][j] < '0')
+			{
+				puts("Error");
+				return (1);
+			}
+		}
+	}
+
+	for (k = 1; k < argc; k++)
+	{
+		num = _atoi(argv[k]);
+		if (num >= 0)
+		{
+			sum += num;
+		}
+	}
+
+	printf("%d\n", sum);
 	return (0);
 }

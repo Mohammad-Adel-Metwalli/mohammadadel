@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			k = _isdigit(argv[i][0])
+			k = _isdigit(argv[i][0]);
 			if (k)
 			{
 				if (k >= 0)
